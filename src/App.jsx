@@ -30,6 +30,9 @@ import Partner from "@src/pages/Contacts/Partner";
 import Report from "@src/pages/Contacts/Report";
 import Feedback from "@src/pages/Contacts/Feedback";
 
+import Privacy from "@src/pages/Agreement/Privacy";
+import Terms from "@src/pages/Agreement/Terms";
+
 function App() {
   return (
     <>
@@ -62,6 +65,8 @@ function App() {
               <Route path="report" element={<Report/>}/>
               <Route path="feedback" element={<Feedback/>}/>
             </Route>
+            <Route path="/privacy" element={<Privacy/>}/>
+            <Route path="/terms" element={<Terms/>}/>
 
           </Route>
         </Routes>

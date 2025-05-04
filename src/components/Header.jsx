@@ -105,6 +105,40 @@ const Header = () => {
               </Transition>
             </div>
 
+            <div
+              className="relative group"
+              onMouseEnter={() => setDropdown("blog")}
+              onMouseLeave={() => setDropdown(null)}
+            >
+              <button
+                onClick={() => toggleDropdown("blog")}
+                className={navLink}
+              >
+                News and Blogs
+              </button>
+              <Transition
+                show={dropdown === "blog"}
+                enter="transition duration-200 ease-out"
+                enterFrom="opacity-0 -translate-y-2"
+                enterTo="opacity-100 translate-y-0"
+                leave="transition duration-150 ease-in"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0"
+              >
+                <div className="absolute top-full left-0 mt-2 w-48 bg-white text-[#1A334A] shadow-lg rounded">
+                  <Link to="/blog/news" className={dropdownLink}>
+                    News
+                  </Link>
+                  <Link to="/blog/blogs" className={dropdownLink}>
+                    Blogs
+                  </Link>
+                  <Link to="/blog/newsletter" className={dropdownLink}>
+                    News Letters
+                  </Link>
+                </div>
+              </Transition>
+            </div>
+
             <Link to="/about" className={navLink}>
               About
             </Link>
@@ -199,6 +233,29 @@ const Header = () => {
                   </Link>
                   <Link to="/community/socials" className={dropdownLink}>
                     Socials
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* Community Mobile */}
+            <div className="px-4">
+              <button
+                onClick={() => toggleDropdown("blog")}
+                className="w-full text-left py-2 hover:underline cursor-pointer"
+              >
+                Blogs
+              </button>
+              {dropdown === "blog" && (
+                <div className="bg-white text-[#1A334A] rounded">
+                  <Link to="/blog/news" className={dropdownLink}>
+                    Blog
+                  </Link>
+                  <Link to="/blog/blogs" className={dropdownLink}>
+                    News
+                  </Link>
+                  <Link to="/blog/newsletter" className={dropdownLink}>
+                    News Letters
                   </Link>
                 </div>
               )}
