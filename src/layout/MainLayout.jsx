@@ -4,9 +4,9 @@ import Header from '@src/components/Header'
 import Footer from '@src/components/Footer'
 const MainLayout = () => {
   return (
-    <div className="min-h-screen w-full">
+    <div className="flex flex-col min-h-screen w-full font-sans">
       <Header />
-      <div className="h-full overflow-auto pt-20 w-full md:pt-24">
+      <div className="h-full overflow-auto flex-1 pt-20 w-full md:pt-24">
         <Outlet />
       </div>
       <Footer />
